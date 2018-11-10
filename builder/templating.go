@@ -5,25 +5,32 @@ import (
   "github.com/microcosm-cc/bluemonday"
   "io/ioutil"
   "bytes"
-  "html/template"
+  "text/template"
   "strings"
   "regexp"
 )
 
-func buildTemplate(){
+func buildTemplate() []byte{
   funcMap := template.FuncMap{
     "IDlize": IDlize,
     "readFile": readFile,
     "renderMarkup": renderMarkup,
   }
 
-  t := template.Must(template.New("layout").Funcs(funcMap).ParseFiles("./layouts/index.html"))
+  t := template.Must(template.New("layout").Funcs(funcMap).ParseFiles("./layout/index.html"))
   buf := new(bytes.Buffer)
   err := t.ExecuteTemplate(buf, "layout", graspContent())
   check(err)
-  err = ioutil.WriteFile("./build.html", buf.Bytes(), 0644)
-  check(err)
+  return buf.Bytes()
 }
+
+func BuildFileTemplate() error{
+  return ioutil.WriteFile("./build.html", buildTemplate(), 0644)
+}
+
+// func ServeTemplate(w http.ResponseWriter, r *http.Request){
+//   w.Write(buildTemplate())
+// }
 
 func IDlize(str string) string{
   str = strings.Replace(str, " ", "-", -1)

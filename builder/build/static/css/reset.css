@@ -1,0 +1,5 @@
+*,*:after,*:before{margin:0; padding: 0;box-sizing: border-box;}
+li,ol,ul{list-style-type: none}
+a{text-decoration: none; color: inherit;}
+a:focus {outline:none;}
+a::-moz-focus-inner {border:0;}

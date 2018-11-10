@@ -1,0 +1,121 @@
+{{define "layout" -}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:800&amp;text=InterstlaB -fidcogfm" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira:200,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700,800" rel="stylesheet">
+  <link href="/static/css/reset.css" rel="stylesheet">
+  <link href="/static/css/functional.css" rel="stylesheet">
+  <title>
+    BxB Astrophysics
+  </title>
+  <style>
+  *,*:after,*:before{margin:0; padding: 0;box-sizing: border-box;}
+
+  svg[logo]{
+    opacity: .2;
+    width: 400px;
+    transform: translateX(-20px)
+  }
+  .full{ width: 100%; height: 100%}
+  header{
+    width: 100vw;
+    height: 48px;
+  }
+  nav{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2)
+  }
+  nav>ul{
+    align-items: center;
+    justify-content: flex-start;
+  }
+  nav li{
+    margin: 0 14px;
+  }
+  .router-container{
+    padding-top: calc(48px);
+    width: 100%;
+  }
+  .router-container>div{
+    width: 600px;
+    max-width: 90%;
+    margin: 27px auto;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header class="fix flex">
+      <nav class="full">
+        <ul class="full flex">
+          <li>
+            <router-link to="">BxB Project</router-link>
+          </li>
+          <li>
+            <router-link to="">Work-Plan</router-link>
+          </li>
+          <li>
+            <router-link to="">Team</router-link>
+          </li>
+          <li>
+            <router-link to="/publications">Publications</router-link>
+          </li>
+          <li>
+            <router-link to="">Conferences</router-link>
+          </li>
+          <li hide>
+            Login
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="router-container">
+      <router-view></router-view>
+    </div>
+  </div>
+
+
+
+<script>
+
+{{readFile "layout/components/pages/error404.js"}}
+{{readFile "layout/components/pages/landing.js"}}
+{{readFile "layout/components/pages/publications.js"}}
+{{readFile "layout/components/router/router-link.js"}}
+{{readFile "layout/components/router/router-view.js"}}
+
+
+const App = {
+  router: {
+    now: '',
+    before: '',
+    routes: {
+      '/': 'landing-page',
+      '/publications': 'publication-page',
+      '/404': 'error-404',
+      '/team': 'team-page',
+      '/workplan': 'workplan-page',
+      '/conferences': 'conference-page'
+    },
+  },
+  vue: null
+}
+
+
+
+App.vue = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+</script>
+</body>
+</html>
+{{end}}
