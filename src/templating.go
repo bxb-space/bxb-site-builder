@@ -17,7 +17,7 @@ func buildTemplate() []byte{
     "renderMarkup": renderMarkup,
   }
 
-  t := template.Must(template.New("layout").Funcs(funcMap).ParseFiles("./layout/index.html"))
+  t := template.Must(template.New("layout").Funcs(funcMap).ParseFiles("./src/index.html"))
   buf := new(bytes.Buffer)
   err := t.ExecuteTemplate(buf, "layout", graspContent())
   check(err)
@@ -25,7 +25,7 @@ func buildTemplate() []byte{
 }
 
 func BuildFileTemplate() error{
-  return ioutil.WriteFile("./build.html", buildTemplate(), 0644)
+  return ioutil.WriteFile("./build/index.html", buildTemplate(), 0644)
 }
 
 // func ServeTemplate(w http.ResponseWriter, r *http.Request){
