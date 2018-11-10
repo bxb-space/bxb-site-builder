@@ -24,8 +24,8 @@ func buildTemplate() []byte{
   return buf.Bytes()
 }
 
-func BuildFileTemplate() error{
-  return ioutil.WriteFile("./build/index.html", buildTemplate(), 0644)
+func BuildFileTemplate(t []byte) error{
+  return ioutil.WriteFile("./build/index.html", t, 0644)
 }
 
 // func ServeTemplate(w http.ResponseWriter, r *http.Request){

@@ -12,9 +12,6 @@ func check(e error) { if e != nil { fmt.Println(e) } }
 func main(){
   http.HandleFunc("/", ServeTemplate)
   http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./build/static"))))
-  // http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-  //   http.ServeFile(w, r, "layouts/index.html")
-  // })
   if err := http.ListenAndServe(":8090", nil); err != nil {
     panic(err)
   }
@@ -23,7 +20,10 @@ func main(){
 }
 
 func ServeTemplate(w http.ResponseWriter, r *http.Request){
-  w.Write(buildTemplate())
+  var t []byte = buildTemplate()
+  w.Write(t)
+  check(BuildFileTemplate(t))
+  // http.ServeFile(w, r, "./build/index.html")
 }
 
 func graspContent() interface{}{
