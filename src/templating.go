@@ -17,7 +17,22 @@ func buildTemplate() []byte{
     "renderMarkup": renderMarkup,
   }
 
-  t := template.Must(template.New("layout").Funcs(funcMap).ParseFiles("./src/index.html"))
+  files := []string{
+    "./src/index.html",
+
+    "./src/components/router/router-link.js",
+    "./src/components/router/router-view.js",
+
+    "./src/components/pages/error404.js",
+    "./src/components/pages/landing.js",
+    "./src/components/pages/publications.js",
+    "./src/components/pages/team.js",
+    "./src/components/pages/workplan.js",
+    "./src/components/pages/events.js",
+  }
+
+
+  t := template.Must(template.New("layout").Funcs(funcMap).ParseFiles(files...))
   buf := new(bytes.Buffer)
   err := t.ExecuteTemplate(buf, "layout", graspContent())
   check(err)

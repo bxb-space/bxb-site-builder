@@ -1,3 +1,4 @@
+{{- define "router-view" -}}
 Vue.component('router-view', {
   props: {},
   components: {},
@@ -35,14 +36,14 @@ Vue.component('router-view', {
       // console.log(`looking for route ${hash} ..`)
       if (App.router.routes[hash]){
         // console.log("route found")
-        this.currentPage = App.router.routes[hash]
+        this.currentPage = App.router.routes[hash].component
       } else {
         // console.log("route not found")
         this.handle404()
       }
     },
     handle404: function(){
-      // console.log("404 ERROR")
+      console.log("404 ERROR")
     }
   },
   data() {
@@ -55,3 +56,4 @@ Vue.component('router-view', {
 </div>
 `
 })
+{{- end -}}

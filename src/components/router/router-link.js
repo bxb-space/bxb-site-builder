@@ -1,3 +1,4 @@
+{{- define "router-link" -}}
 Vue.component('router-link', {
   props: {
     to: {
@@ -30,3 +31,4 @@ Vue.component('router-link', {
   },
   template: `<a :href="'/#' + to" :class="$options.name"><slot></slot></a>`
 })
+{{- end -}}

@@ -1,5 +1,5 @@
-{{- define "error-404" -}}
-Vue.component('error-404', {
+{{- define "team-page" -}}
+Vue.component('team-page', {
   props: {},
   components: {},
   // created(){},
@@ -7,6 +7,8 @@ Vue.component('error-404', {
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
+  watch: {},
+  computed: {},
   methods: {},
   data() {
     return {}

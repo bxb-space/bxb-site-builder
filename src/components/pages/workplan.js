@@ -1,5 +1,5 @@
-{{- define "error-404" -}}
-Vue.component('error-404', {
+{{- define "workplan-page" -}}
+Vue.component('workplan-page', {
   props: {},
   components: {},
   // created(){},
@@ -7,6 +7,8 @@ Vue.component('error-404', {
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
+  watch: {},
+  computed: {},
   methods: {},
   data() {
     return {}

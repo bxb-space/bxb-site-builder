@@ -1,5 +1,5 @@
-{{- define "error-404" -}}
-Vue.component('error-404', {
+{{- define "events-page" -}}
+Vue.component('events-page', {
   props: {},
   components: {},
   // created(){},
@@ -7,12 +7,15 @@ Vue.component('error-404', {
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
+  watch: {},
+  computed: {},
   methods: {},
   data() {
     return {}
   },
   template: `
 <div :class="$options.name">
+
 </div>
 `
 })

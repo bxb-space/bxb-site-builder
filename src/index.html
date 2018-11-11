@@ -7,7 +7,7 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:800&amp;text=InterstlaB -fidcogfm" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Saira:200,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700,800" rel="stylesheet">
   <link href="/static/css/reset.css" rel="stylesheet">
   <link href="/static/css/functional.css" rel="stylesheet">
@@ -15,37 +15,66 @@
     BxB Astrophysics
   </title>
   <style>
+
   *,*:after,*:before{margin:0; padding: 0;box-sizing: border-box;}
+
+  body{
+    font-family: Montserrat;
+  }
 
   svg[logo]{
     opacity: .2;
     width: 400px;
     transform: translateX(-20px)
   }
-  .full{ width: 100%; height: 100%}
+
+.full{ width: 100%; height: 100% }
+
   header{
     width: 100vw;
     height: 48px;
   }
+
   nav{
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    font-weight: 200;
+    font-family: Saira
   }
+
   nav>ul{
     align-items: center;
     justify-content: flex-start;
   }
+
   nav li{
     margin: 0 14px;
   }
+
   .router-container{
     padding-top: calc(48px);
     width: 100%;
   }
+
   .router-container>div{
     width: 600px;
     max-width: 90%;
-    margin: 27px auto;
+    margin: 82px auto 48px;
   }
+  svg[logo]{
+    width: 220px;
+  }
+
+
+h1{
+  font-weight: 200;
+  font-family: 'Saira SemiCondensed';
+  letter-spacing: .2px;
+  font-size: 37px;
+  line-height: 1.2;
+  margin-bottom: 87px
+}
+
   </style>
 </head>
 <body>
@@ -54,19 +83,19 @@
       <nav class="full">
         <ul class="full flex">
           <li>
-            <router-link to="">BxB Project</router-link>
+            <router-link>BxB Project</router-link>
           </li>
           <li>
-            <router-link to="">Work-Plan</router-link>
+            <router-link to="/workplan">Work Plan</router-link>
           </li>
           <li>
-            <router-link to="">Team</router-link>
+            <router-link to="/team">Team</router-link>
           </li>
           <li>
             <router-link to="/publications">Publications</router-link>
           </li>
           <li>
-            <router-link to="">Conferences</router-link>
+            <router-link to="/events">Events</router-link>
           </li>
           <li hide>
             Login
@@ -75,7 +104,7 @@
       </nav>
     </header>
     <div class="router-container">
-      <router-view></router-view>
+      <router-view class="router-view"></router-view>
     </div>
   </div>
 
@@ -83,11 +112,16 @@
 
 <script>
 
-{{readFile "src/components/pages/error404.js"}}
-{{readFile "src/components/pages/landing.js"}}
-{{readFile "src/components/pages/publications.js"}}
-{{readFile "src/components/router/router-link.js"}}
-{{readFile "src/components/router/router-view.js"}}
+
+
+{{template "error-404" .}}
+{{template "landing-page" .}}
+{{template "publication-page" . }}
+{{template "team-page" .}}
+{{template "workplan-page" .}}
+{{template "events-page" .}}
+{{template "router-link" .}}
+{{template "router-view" .}}
 
 
 const App = {
@@ -95,12 +129,13 @@ const App = {
     now: '',
     before: '',
     routes: {
-      '/': 'landing-page',
-      '/publications': 'publication-page',
-      '/404': 'error-404',
-      '/team': 'team-page',
-      '/workplan': 'workplan-page',
-      '/conferences': 'conference-page'
+      '/': { component: 'landing-page', name: 'BxB Project'},
+      '/publications': { component: 'publication-page', name: 'Publications' },
+      '/team': { component: 'team-page', name: 'Team' },
+      '/workplan': { component: 'workplan-page', name: 'Work Plan' },
+      '/events': { component: 'events-page', name: 'Events' },
+
+      '/404': { component: 'error-404', name: '' },
     },
   },
   vue: null
@@ -111,7 +146,7 @@ const App = {
 App.vue = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!'
+
   }
 })
 

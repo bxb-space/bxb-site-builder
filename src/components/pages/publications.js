@@ -1,3 +1,4 @@
+{{- define "publication-page" -}}
 Vue.component('publication-page', {
   props: {},
   components: {},
@@ -17,3 +18,4 @@ Vue.component('publication-page', {
 </div>
 `
 })
+{{- end -}}
