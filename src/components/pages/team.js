@@ -15,6 +15,7 @@ Vue.component('team-page', {
   },
   template: `
 <div :class="$options.name">
+  {{readFile "assets/content/team-page-intro.md"}}
 </div>
 `
 })

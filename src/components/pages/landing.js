@@ -19,6 +19,8 @@ Vue.component('landing-page', {
   <h1 class="title">
     Interstellar B-fields crossing inflation B-modes
   </h1>
+
+  {{readFile "assets/content/landing-page-proposal.md" | renderMarkup}}
 </div>
 `
 })
