@@ -25,11 +25,12 @@ strong{
   color: @blue;
 }
 p{
+  margin: 22px 0 36px;
   &:first-of-type{
-    margin: 58px 0 36px;
+
   }
   &+&{
-    text-indent: 23.4px;
+    text-indent: .4em;
   } /*p+p*/
 }
 blockquote{
@@ -49,5 +50,44 @@ blockquote{
   }
   p+p{
     margin-top: 12px;
+  }
+}
+.landing-page{
+  ul.workplan{
+    font-family: Saira;
+    li{
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      text-align: center;
+
+    }
+    a{
+      color: @orange;
+      line-height: .7;
+      display: inline;
+
+    }
+  }
+}
+ul.emphase{
+  width: calc(100% - 12em);
+  margin: 0 auto;
+
+  .pseudo;
+  &::before,&::after{
+    top: 12px;
+    bottom: 7px;
+    width: 3px;
+    border-radius: 2px;
+    background-color: #ff7830;
+    opacity: 0.7;
+  }
+  &::before{
+    left: -1.4em;
+  }
+  &::after{
+    right: -1.4em;
   }
 }

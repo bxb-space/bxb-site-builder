@@ -13,93 +13,179 @@
   <title>
     BxB Astrophysics
   </title>
-  <style>
-
-  *,*:after,*:before{margin:0; padding: 0;box-sizing: border-box;}
-
-  body{
-    font-family: Montserrat;
-  }
-
-  svg[logo]{
-    opacity: .2;
-    width: 400px;
-    transform: translateX(-20px)
-  }
-
-.full{ width: 100%; height: 100% }
-
-  header{
-    width: 100vw;
-    height: 48px;
-  }
-
-  nav{
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    padding: 8px;
-    font-weight: 200;
-    font-family: Saira
-  }
-
-  nav>ul{
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  nav li{
-    margin: 0 14px;
-  }
-
-  .router-container{
-    padding-top: calc(48px);
-    width: 100%;
-  }
-
-  .router-container>div{
-    width: 600px;
-    max-width: 90%;
-    margin: 82px auto 48px;
-  }
-  svg[logo]{
-    width: 220px;
-  }
-
-
-h1{
-  font-weight: 200;
-  font-family: 'Saira SemiCondensed';
-  letter-spacing: .2px;
-  font-size: 37px;
-  line-height: 1.2;
-  margin-bottom: 87px
+  <style critical>*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-  </style>
-  <style>
+li,
+ol,
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.rel {
+  position: relative;
+}
+.z-1 {
+  z-index: -1;
+}
+.z0 {
+  z-index: 0;
+}
+.z1 {
+  z-index: 1;
+}
+.z2 {
+  z-index: 2;
+}
+.z3 {
+  z-index: 3;
+}
+.text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex.center {
+  align-items: center;
+  justify-content: center;
+}
+.flex.nogrow {
+  flex-grow: 0;
+}
+.flex.noshrink {
+  flex-shrink: 0;
+}
+.flex.col {
+  flex-direction: column;
+}
+.flex.row {
+  flex-direction: row;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.pointer {
+  cursor: pointer;
+}
+[hide] {
+  display: none;
+}
+body {
+  font-family: Montserrat;
+}
+svg[logo] {
+  opacity: 0.2;
+  width: 400px;
+  transform: translateX(-20px);
+}
+.full {
+  width: 100%;
+  height: 100%;
+}
+header {
+  width: 100vw;
+  height: 48px;
+  background: #fff;
+  z-index: 5;
+}
+nav {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  font-weight: 200;
+  font-family: Saira;
+}
+nav > ul {
+  align-items: center;
+  justify-content: flex-start;
+}
+nav li {
+  margin: 0 14px;
+}
+.router-container {
+  padding-top: calc(48px);
+  width: 100%;
+}
+.router-container > div {
+  position: relative;
+  width: 600px;
+  max-width: 90%;
+  margin: 82px auto 48px;
+}
+svg[logo] {
+  width: 220px;
+  /* z-index: -1; */
+  fill: #ff7830;
+  opacity: 0.4;
+  left: -20px;
+  top: -4px;
+  mix-blend-mode: difference;
+}
+</style>
+  <style willbeasync>
   h1 {
-  font-size: 40px;
+  font-size: 42px;
 }
 h1.title {
   font-weight: 300;
   font-family: 'Saira SemiCondensed';
   letter-spacing: 0.2px;
-  font-size: 37px;
   line-height: 1.2;
+  margin-bottom: 87px;
 }
 h2 {
   font-size: 33px;
+  margin: 62px 0 32px;
 }
 h3 {
   font-size: 27px;
+  font-weight: 700;
+  margin: 42px 0 18px;
 }
 h4 {
   font-size: 23px;
+  font-weight: 700;
+  margin: 32px 0 8px;
 }
 h5 {
   font-size: 19px;
+  font-weight: 500;
+  margin: 26px 0 8px;
 }
 h6 {
+  font-weight: 600;
   font-size: 16px;
+  margin: 22px 0 8px;
 }
 
 
@@ -138,13 +224,11 @@ strong {
   color: #5b9aff;
 }
 p {
+  margin: 22px 0 36px;
   /*p+p*/
 }
-p:first-of-type {
-  margin: 58px 0 36px;
-}
 p + p {
-  text-indent: 23.4px;
+  text-indent: 0.4em;
 }
 blockquote {
   width: 90%;
@@ -168,6 +252,46 @@ blockquote p {
 }
 blockquote p + p {
   margin-top: 12px;
+}
+.landing-page ul.workplan {
+  font-family: Saira;
+}
+.landing-page ul.workplan li {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.landing-page ul.workplan a {
+  color: #ff7830;
+  line-height: 0.7;
+  display: inline;
+}
+ul.emphase {
+  width: calc(100% - 12em);
+  margin: 0 auto;
+  position: relative;
+}
+ul.emphase:before,
+ul.emphase:after {
+  position: absolute;
+  content: "";
+}
+ul.emphase::before,
+ul.emphase::after {
+  top: 12px;
+  bottom: 7px;
+  width: 3px;
+  border-radius: 2px;
+  background-color: #ff7830;
+  opacity: 0.7;
+}
+ul.emphase::before {
+  left: -1.4em;
+}
+ul.emphase::after {
+  right: -1.4em;
 }
 
   </style>
@@ -237,7 +361,25 @@ Vue.component('landing-page', {
   computed: {},
   methods: {},
   data() {
-    return {}
+    return {
+      workPackages : [
+        {
+           "name": "3D mapping of the ordered β field from the Sun to the Galactic halo",
+           "description": "",
+           "members": [""]
+        },
+        {
+           "name": "Statistical description of the turbulent magnetized diffuse ISM",
+           "description": "",
+           "members": [""]
+        },
+        {
+           "name": "Separation between Galactic and primordial CMB B-modes",
+           "description": "",
+           "members": [""]
+        }
+      ]
+    }
   },
   template: `
 <div :class="$options.name">
@@ -245,6 +387,19 @@ Vue.component('landing-page', {
   <h1 class="title">
     Interstellar B-fields crossing inflation B-modes
   </h1>
+
+  <p>Our work plan bridges <strong>data analysis, theoretical and statistical modelling, and component separation</strong>, building on the complementarities of expertise and data gathered in the BxB project.</p>
+
+<p>The project is organized into <strong>three Work Packages (WPs)</strong>, each dedicated to one of the three main goals of our study:</p>
+
+
+  <ul class="workplan emphase">
+    <li v-for="(workPackage, index) in workPackages">
+      <router-link :to="'/workplan/workpackage-0' + (index+1)  ">
+        WP\{\{index+1\}\} - \{\{workPackage.name\}\}
+      </router-link>
+    </li>
+  </ul>
 
   <h3>Proposal</h3>
 

@@ -1,10 +1,10 @@
 {{- define "style" -}}
 
-{{ renderLESS "src/styles/headlines.less"}}
+{{ renderLESS "src/styles/src/headlines.less"}}
 
 
 
 
-{{ renderLESS "src/styles/text.less"}}
+{{ renderLESS "src/styles/src/text.less"}}
 
 {{- end -}}

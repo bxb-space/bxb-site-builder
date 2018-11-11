@@ -11,7 +11,25 @@ Vue.component('landing-page', {
   computed: {},
   methods: {},
   data() {
-    return {}
+    return {
+      workPackages : [
+        {
+           "name": "3D mapping of the ordered β field from the Sun to the Galactic halo",
+           "description": "",
+           "members": [""]
+        },
+        {
+           "name": "Statistical description of the turbulent magnetized diffuse ISM",
+           "description": "",
+           "members": [""]
+        },
+        {
+           "name": "Separation between Galactic and primordial CMB B-modes",
+           "description": "",
+           "members": [""]
+        }
+      ]
+    }
   },
   template: `
 <div :class="$options.name">
@@ -19,6 +37,16 @@ Vue.component('landing-page', {
   <h1 class="title">
     Interstellar B-fields crossing inflation B-modes
   </h1>
+
+  {{readFile "assets/content/landing-page-intro.md" | renderMarkup}}
+
+  <ul class="workplan emphase">
+    <li v-for="(workPackage, index) in workPackages">
+      <router-link :to="'/workplan/workpackage-0' + (index+1)  ">
+        WP\{\{index+1\}\} - \{\{workPackage.name\}\}
+      </router-link>
+    </li>
+  </ul>
 
   {{readFile "assets/content/landing-page-proposal.md" | renderMarkup}}
 </div>
