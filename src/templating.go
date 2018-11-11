@@ -8,6 +8,7 @@ import (
   "text/template"
   "strings"
   "regexp"
+  "os/exec"
 )
 
 func buildTemplate() []byte{
@@ -15,6 +16,7 @@ func buildTemplate() []byte{
     "IDlize": IDlize,
     "readFile": readFile,
     "renderMarkup": renderMarkup,
+    "renderLESS": renderLESS,
   }
 
   files := []string{
@@ -28,8 +30,8 @@ func buildTemplate() []byte{
     "./src/components/pages/team.js",
     "./src/components/pages/workplan.js",
     "./src/components/pages/events.js",
-    
 
+    "./src/styles/style.css",
   }
 
 
@@ -62,4 +64,10 @@ func readFile(fileName string) string{
 }
 func renderMarkup(content string) string{
   return string(bluemonday.UGCPolicy().SanitizeBytes(blackfriday.Run([]byte(content))))
+}
+
+func renderLESS(file string) string{
+  data, err := exec.Command("lessc", file).Output()
+  check(err)
+  return string(data)
 }

@@ -75,6 +75,102 @@ h1{
 }
 
   </style>
+  <style>
+  h1 {
+  font-size: 40px;
+}
+h1.title {
+  font-weight: 300;
+  font-family: 'Saira SemiCondensed';
+  letter-spacing: 0.2px;
+  font-size: 37px;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 33px;
+}
+h3 {
+  font-size: 27px;
+}
+h4 {
+  font-size: 23px;
+}
+h5 {
+  font-size: 19px;
+}
+h6 {
+  font-size: 16px;
+}
+
+
+
+
+
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.pseudo {
+  position: relative;
+}
+.pseudo:before,
+.pseudo:after {
+  position: absolute;
+  content: "";
+}
+a,
+p,
+li {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.17s;
+}
+a:hover {
+  border-color: #ff7830;
+}
+strong {
+  color: #5b9aff;
+}
+p {
+  /*p+p*/
+}
+p:first-of-type {
+  margin: 58px 0 36px;
+}
+p + p {
+  text-indent: 23.4px;
+}
+blockquote {
+  width: 90%;
+  margin: 24px auto 40px;
+  position: relative;
+}
+blockquote:before,
+blockquote:after {
+  position: absolute;
+  content: "";
+}
+blockquote:before {
+  top: 0;
+  bottom: 0;
+  left: -4%;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+blockquote p {
+  margin: 0 !important;
+}
+blockquote p + p {
+  margin-top: 12px;
+}
+
+  </style>
 </head>
 <body>
   <div id="app">
