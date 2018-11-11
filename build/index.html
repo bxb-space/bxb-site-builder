@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:800&amp;text=InterstlaB -fidcogfm" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700,800" rel="stylesheet">
+  <link href="/static/css/reset.css" rel="stylesheet">
+  <link href="/static/css/functional.css" rel="stylesheet">
+  <title>
+    BxB Astrophysics
+  </title>
+  <style critical>*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li,
+ol,
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+.abs {
+  position: absolute;
+}
+.fix {
+  position: fixed;
+}
+.rel {
+  position: relative;
+}
+.z-1 {
+  z-index: -1;
+}
+.z0 {
+  z-index: 0;
+}
+.z1 {
+  z-index: 1;
+}
+.z2 {
+  z-index: 2;
+}
+.z3 {
+  z-index: 3;
+}
+.text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex.center {
+  align-items: center;
+  justify-content: center;
+}
+.flex.nogrow {
+  flex-grow: 0;
+}
+.flex.noshrink {
+  flex-shrink: 0;
+}
+.flex.col {
+  flex-direction: column;
+}
+.flex.row {
+  flex-direction: row;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.pointer {
+  cursor: pointer;
+}
+[hide] {
+  display: none;
+}
+body {
+  font-family: Montserrat;
+}
+svg[logo] {
+  opacity: 0.2;
+  width: 400px;
+  transform: translateX(-20px);
+}
+.full {
+  width: 100%;
+  height: 100%;
+}
+header {
+  width: 100vw;
+  height: 48px;
+  background: #fff;
+  z-index: 5;
+}
+nav {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  font-weight: 200;
+  font-family: Saira;
+}
+nav > ul {
+  align-items: center;
+  justify-content: flex-start;
+}
+nav li {
+  margin: 0 14px;
+}
+.router-container {
+  padding-top: calc(48px);
+  width: 100%;
+}
+.router-container > div {
+  position: relative;
+  width: 600px;
+  max-width: 90%;
+  margin: 82px auto 48px;
+}
+svg[logo] {
+  width: 220px;
+  /* z-index: -1; */
+  fill: #ff7830;
+  opacity: 0.4;
+  left: -20px;
+  top: -4px;
+  mix-blend-mode: difference;
+}
+</style>
+  <style willbeasync>
+  h1 {
+  font-size: 42px;
+}
+h1.title {
+  font-weight: 300;
+  font-family: 'Saira SemiCondensed';
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin-bottom: 74px;
+}
+h2 {
+  font-size: 33px;
+  margin: 62px 0 32px;
+}
+h3 {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 42px 0 18px;
+}
+h4 {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 32px 0 8px;
+}
+h5 {
+  font-size: 19px;
+  font-weight: 500;
+  margin: 26px 0 8px;
+}
+h6 {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 22px 0 8px;
+}
+
+
+
+
+
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.pseudo {
+  position: relative;
+}
+.pseudo:before,
+.pseudo:after {
+  position: absolute;
+  content: "";
+}
+a,
+p,
+li {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.17s;
+}
+a:hover {
+  border-color: #ff7830;
+}
+strong {
+  color: #5b9aff;
+}
+p {
+  margin: 22px 0 36px;
+  /*p+p*/
+}
+p + p {
+  text-indent: 0.4em;
+}
+blockquote {
+  width: 90%;
+  margin: 24px auto 40px;
+  position: relative;
+}
+blockquote:before,
+blockquote:after {
+  position: absolute;
+  content: "";
+}
+blockquote:before {
+  top: 0;
+  bottom: 0;
+  left: -4%;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+blockquote p {
+  margin: 0 !important;
+}
+blockquote p + p {
+  margin-top: 12px;
+}
+.landing-page ul.workplan {
+  font-family: Saira;
+}
+.landing-page ul.workplan li {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.landing-page ul.workplan a {
+  color: #ff7830;
+  line-height: 0.7;
+  display: inline;
+}
+ul.emphase {
+  width: calc(100% - 12em);
+  margin: 0 auto;
+  position: relative;
+}
+ul.emphase:before,
+ul.emphase:after {
+  position: absolute;
+  content: "";
+}
+ul.emphase::before,
+ul.emphase::after {
+  top: 12px;
+  bottom: 7px;
+  width: 3px;
+  border-radius: 2px;
+  background-color: #ff7830;
+  opacity: 0.7;
+}
+ul.emphase::before {
+  left: -1.4em;
+}
+ul.emphase::after {
+  right: -1.4em;
+}
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header class="fix flex">
+      <nav class="full">
+        <ul class="full flex">
+          <li>
+            <router-link>BxB Project</router-link>
+          </li>
+          <li>
+            <router-link to="/workplan">Work Plan</router-link>
+          </li>
+          <li>
+            <router-link to="/team">Team</router-link>
+          </li>
+          <li>
+            <router-link to="/publications">Publications</router-link>
+          </li>
+          <li>
+            <router-link to="/events">Events</router-link>
+          </li>
+          <li hide>
+            Login
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="router-container">
+      <router-view class="router-view"></router-view>
+    </div>
+  </div>
+
+
+
+<script>
+
+
+Vue.component('error-404', {
+  props: {},
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  methods: {},
+  data() {
+    return {}
+  },
+  template: `
+<div :class="$options.name">
+</div>
+`
+})
+Vue.component('landing-page', {
+  props: {},
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {
+      workPackages : [
+        {
+           "name": "3D mapping of the ordered β field from the Sun to the Galactic halo",
+           "description": "",
+           "members": [""]
+        },
+        {
+           "name": "Statistical description of the turbulent magnetized diffuse ISM",
+           "description": "",
+           "members": [""]
+        },
+        {
+           "name": "Separation between Galactic and primordial CMB B-modes",
+           "description": "",
+           "members": [""]
+        }
+      ]
+    }
+  },
+  template: `
+<div :class="$options.name">
+  <svg logo="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.26 78.69" class="abs"><g class="cls-1"><path d="M57.33,17.64c.42.24.52.84.31,1.76a33.57,33.57,0,0,1-1.74,4.67,39,39,0,0,1-2.23,4.6,5,5,0,0,1-1.89,1.92,7.71,7.71,0,0,1-2.8.59l-3,.21,5.9-13.76,3-.21A4.86,4.86,0,0,1,57.33,17.64ZM53.4,28.55a38,38,0,0,0,2.15-4.45,34.23,34.23,0,0,0,1.7-4.53c.17-.76.09-1.23-.25-1.43a5.06,5.06,0,0,0-2.35-.2L52,18.13,46.52,30.89l2.69-.19a7.19,7.19,0,0,0,2.66-.55A4,4,0,0,0,53.4,28.6"></path> <path d="M45.11,46.18c.4.28.47.93.23,1.93a36.64,36.64,0,0,1-1.8,4.78,44.58,44.58,0,0,1-2.36,4.93,5,5,0,0,1-1.94,2,8.15,8.15,0,0,1-2.8.59l-3,.21,6.23-14.55,3-.21A4.25,4.25,0,0,1,45.11,46.18ZM40.9,57.7a40.78,40.78,0,0,0,2.3-4.81A38.09,38.09,0,0,0,45,48.27c.2-.84.14-1.36-.18-1.6a4.18,4.18,0,0,0-2.32-.25l-2.69.19L34,60.1l2.7-.19a7.41,7.41,0,0,0,2.67-.55,4,4,0,0,0,1.56-1.66"></path> <path d="M60.52,45.47A48.29,48.29,0,0,1,57.2,55.4c-3,6.94-6.37,12.27-10.11,15.83A20.17,20.17,0,0,1,34.28,77.1l-23,1.59,33-77.06L67.35,0c9.07-.63,10.86,5.61,5.31,18.56A49.61,49.61,0,0,1,65.4,31.23,21.94,21.94,0,0,1,57,37.37,6.38,6.38,0,0,1,60.16,40C60.83,41.21,60.94,43,60.52,45.47ZM47,70.89c3.62-3.47,6.93-8.66,9.85-15.46a48.19,48.19,0,0,0,3.26-9.73c.4-2.34.29-4.1-.31-5.21a6,6,0,0,0-3.2-2.6l.26-.9a21,21,0,0,0,8.38-6c2.4-2.76,4.78-6.91,7.1-12.32C77.74,6.08,76,0,67.15.61L44.44,2.13l-32.58,76,22.65-1.57A19.71,19.71,0,0,0,47,70.89"></path></g> <g class="cls-1"><path d="M34.77,21.62a5.84,5.84,0,0,1,2.41,1.45,36.88,36.88,0,0,1,3.14,3.71,25.12,25.12,0,0,1,2.44,3.61c.33.74.27,1.23-.2,1.45a7.78,7.78,0,0,1-2.88.3H36.07L27.8,21.26h3.61A13.57,13.57,0,0,1,34.77,21.62Zm7.5,8.65a23.55,23.55,0,0,0-2.37-3.49,33,33,0,0,0-3-3.59A4.8,4.8,0,0,0,35,22a12.81,12.81,0,0,0-3.21-.31H28.56l7.64,10h3.2a7.5,7.5,0,0,0,2.75-.28q.57-.26.15-1.17"></path> <path d="M51.93,44.13a6.44,6.44,0,0,1,2.51,1.59,37.28,37.28,0,0,1,3.2,3.79,29,29,0,0,1,2.64,3.87c.39.8.34,1.32-.13,1.54a7.73,7.73,0,0,1-2.87.3H53.67L44.92,43.73h3.61A12.56,12.56,0,0,1,51.93,44.13Zm7.87,9.14a27.44,27.44,0,0,0-2.57-3.76,36.14,36.14,0,0,0-3.1-3.68,5.35,5.35,0,0,0-2-1.31,11.69,11.69,0,0,0-3.23-.36H45.7l8.07,10.63H57a7.5,7.5,0,0,0,2.75-.28c.39-.17.41-.58.09-1.25"></path> <path d="M70.65,44.51a54.19,54.19,0,0,1,7.16,7.9c4.17,5.47,6,9.6,5.31,12.28s-3.85,4-9.51,4l-27.3-.14L0,7.75l27.36.14c10.77,0,20.17,5.26,28,15.47,3.32,4.35,5.07,7.67,5.22,9.85S59.47,36.89,57,37.69a38.47,38.47,0,0,1,7,2.37A29.51,29.51,0,0,1,70.65,44.51Zm12,19.88c.62-2.59-1.13-6.63-5.21-12a52.91,52.91,0,0,0-7-7.73A27.7,27.7,0,0,0,64,40.4a35.05,35.05,0,0,0-7-2.32l-.69-.72C59,36.54,60.16,35.07,60,33s-1.86-5.35-5.11-9.61c-7.58-9.94-16.74-15-27.24-15.06l-27-.13,45.71,60,26.88.13c5.55,0,8.69-1.27,9.32-3.87"></path></g></svg>
+  <h1 class="title">
+    Interstellar B-fields crossing inflation B-modes
+  </h1>
+
+  <p>Our work plan bridges <strong>data analysis, theoretical and statistical modelling, and component separation</strong>, building on the complementarities of expertise and data gathered in the BxB project.</p>
+
+<p>The project is organized into <strong>three Work Packages (WPs)</strong>, each dedicated to one of the three main goals of our study:</p>
+
+
+  <ul class="workplan emphase">
+    <li v-for="(workPackage, index) in workPackages">
+      <router-link :to="'/workplan/workpackage-0' + (index+1)  ">
+        WP\{\{index+1\}\} - \{\{workPackage.name\}\}
+      </router-link>
+    </li>
+  </ul>
+
+  <h3>Proposal</h3>
+
+<blockquote>
+<p>The BxB project addresses outstanding questions at the heart of two rapidly advancing fields of astrophysics and cosmology: Galactic magnetism and Cosmic Microwave Background (CMB) polarization.<br/>
+Research is funded by the French national science foundation (Agence National de la Recherche, ANR).</p>
+</blockquote>
+
+<p>Magnetism represents a fascinating, and so far poorly understood, facet of our cosmic origins. In the past few years, cosmic magnetism has become a recognized and rapidly growing field of research in astrophysics. This evolution was made possible by major improvements in observational capabilities.</p>
+
+</div>
+`
+})
+Vue.component('publication-page', {
+  props: {},
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {}
+  },
+  template: `
+<div :class="$options.name">
+</div>
+`
+})
+Vue.component('team-page', {
+  props: {},
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {}
+  },
+  template: `
+<div :class="$options.name">
+  
+</div>
+`
+})
+Vue.component('workplan-page', {
+  props: {},
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {}
+  },
+  template: `
+<div :class="$options.name">
+</div>
+`
+})
+Vue.component('events-page', {
+  props: {},
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {}
+  },
+  template: `
+<div :class="$options.name">
+
+</div>
+`
+})
+Vue.component('router-link', {
+  props: {
+    to: {
+      type: String,
+      default: "/"
+    }
+  },
+  components: {},
+  created(){
+    // if (this.to === '') {this.sanitizedTo = '/'} else {
+    //   if (this.to.length > 0){
+    //     if (this.to[0] !== "/") {this.sanitizedTo = "/" + this.to} else {
+    //       this.sanitizeTo = this.to
+    //     }
+    //   }
+    // }
+
+  },
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {
+      sanitizedTo: '/'
+    }
+  },
+  template: `<a :href="'/#' + to" :class="$options.name"><slot></slot></a>`
+})
+Vue.component('router-view', {
+  props: {},
+  components: {},
+  created(){
+    this.sanitizeHash()
+    window.addEventListener('hashchange', this.sanitizeHash)
+  },
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {
+    sanitizeHash: function(){
+      if (window.location.href.split('/#/').length === 2){
+        // console.log("route is correctly set")
+        this.setClientSideSeparator(this.clientSideHash())
+        this.findRoute(this.clientSideHash())
+      } else {
+        // console.log("route has been normalized")
+        this.setClientSideSeparator()
+        this.currentPage = App.router.routes['/']
+      }
+    },
+    setClientSideSeparator: function(hash){
+      if (!hash) hash = "";
+      history.pushState( null, null, window.location.pathname.replace(/(\/)+$/, "") + "/#/" + hash)
+    },
+    clientSideHash: function(){
+      return window.location.href.split('/#/')[1] || '';
+    },
+    findRoute: function(hash){
+      hash = "/" + hash
+      // console.log(`looking for route ${hash} ..`)
+      if (App.router.routes[hash]){
+        // console.log("route found")
+        this.currentPage = App.router.routes[hash].component
+      } else {
+        // console.log("route not found")
+        this.handle404()
+      }
+    },
+    handle404: function(){
+      console.log("404 ERROR")
+    }
+  },
+  data() {
+    return {
+      currentPage: 'landing-page'
+    }
+  },
+  template: `
+<div :is="currentPage">
+</div>
+`
+})
+
+
+
+const App = {
+  router: {
+    now: '',
+    before: '',
+    routes: {
+      '/': { component: 'landing-page', name: 'BxB Project'},
+      '/publications': { component: 'publication-page', name: 'Publications' },
+      '/team': { component: 'team-page', name: 'Team' },
+      '/workplan': { component: 'workplan-page', name: 'Work Plan' },
+      '/events': { component: 'events-page', name: 'Events' },
+
+      '/404': { component: 'error-404', name: '' },
+    },
+  },
+  vue: null
+}
+
+
+
+App.vue = new Vue({
+  el: '#app',
+  data: {
+
+  }
+})
+
+</script>
+</body>
+</html>

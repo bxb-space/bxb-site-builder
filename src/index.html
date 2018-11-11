@@ -1,0 +1,102 @@
+{{define "layout" -}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:800&amp;text=InterstlaB -fidcogfm" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700,800" rel="stylesheet">
+  <link href="/static/css/reset.css" rel="stylesheet">
+  <link href="/static/css/functional.css" rel="stylesheet">
+  <title>
+    BxB Astrophysics
+  </title>
+  <style critical>
+  {{- renderLESS "./src/styles/src/reset.css" -}}
+  {{- renderLESS "./src/styles/src/functional.css" -}}
+  {{- renderLESS "./src/styles/src/critical.less" -}}
+  </style>
+  <style willbeasync>
+  {{ template "style" .}}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header class="fix flex">
+      <nav class="full">
+        <ul class="full flex">
+          <li>
+            <router-link>BxB Project</router-link>
+          </li>
+          <li>
+            <router-link to="/workplan">Work Plan</router-link>
+          </li>
+          <li>
+            <router-link to="/team">Team</router-link>
+          </li>
+          <li>
+            <router-link to="/publications">Publications</router-link>
+          </li>
+          <li>
+            <router-link to="/events">Events</router-link>
+          </li>
+          <li hide>
+            Login
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="router-container">
+      <router-view class="router-view"></router-view>
+    </div>
+  </div>
+
+
+
+<script>
+
+
+{{template "error-404" .}}
+{{template "landing-page" .}}
+{{template "publication-page" . }}
+{{template "team-page" .}}
+{{template "workplan-page" .}}
+{{template "events-page" .}}
+{{template "router-link" .}}
+{{template "router-view" .}}
+
+
+
+const App = {
+  router: {
+    now: '',
+    before: '',
+    routes: {
+      '/': { component: 'landing-page', name: 'BxB Project'},
+      '/publications': { component: 'publication-page', name: 'Publications' },
+      '/team': { component: 'team-page', name: 'Team' },
+      '/workplan': { component: 'workplan-page', name: 'Work Plan' },
+      '/events': { component: 'events-page', name: 'Events' },
+
+      '/404': { component: 'error-404', name: '' },
+    },
+  },
+  vue: null
+}
+
+
+
+App.vue = new Vue({
+  el: '#app',
+  data: {
+
+  }
+})
+
+</script>
+</body>
+</html>
+{{end}}
