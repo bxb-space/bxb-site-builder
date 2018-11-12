@@ -30,8 +30,6 @@ func buildTemplate() []byte{
     "./src/components/pages/team.js",
     "./src/components/pages/workplan.js",
     "./src/components/pages/events.js",
-
-    "./src/styles/style.css",
   }
 
 
@@ -42,14 +40,40 @@ func buildTemplate() []byte{
   return buf.Bytes()
 }
 
-func BuildFileTemplate(t []byte) error{
-  return ioutil.WriteFile("./build/index.html", t, 0644)
+func writeToFile(path string, payload []byte) error{
+  return ioutil.WriteFile(path, payload, 0644)
 }
 
-// func ServeTemplate(w http.ResponseWriter, r *http.Request){
-//   w.Write(buildTemplate())
-// }
+func BuildFileTemplate(t []byte) error{
+  return writeToFile("./build/index.html", t)
+}
+func BuildStaticAssets(t []byte) error{
+  return writeToFile("./build/static/css/style.css", t)
+}
 
+func buildStyle() []byte{
+  funcMap := template.FuncMap{
+    "IDlize": IDlize,
+    "readFile": readFile,
+    "renderMarkup": renderMarkup,
+    "renderLESS": renderLESS,
+  }
+  files := []string{
+    "./src/styles/style.css",
+  }
+  t := template.Must(template.New("style").Funcs(funcMap).ParseFiles(files...))
+  buf := new(bytes.Buffer)
+  err := t.ExecuteTemplate(buf, "style", nil)
+  check(err)
+  return buf.Bytes()
+}
+
+
+
+
+
+
+// func maps
 func IDlize(str string) string{
   str = strings.Replace(str, " ", "-", -1)
   str = strings.ToLower(str)

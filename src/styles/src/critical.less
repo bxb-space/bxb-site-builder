@@ -14,7 +14,10 @@ header{
   width: 100vw;
   height: 48px;
   background: #fff;
-  z-index: 5
+  z-index: 5;
+  @media screen and (max-width: 500px) {
+    height: 60px;
+  }
 }
 
 nav{
@@ -33,6 +36,27 @@ nav li{
   margin: 0 14px;
 }
 
+nav li.login{
+  margin-left: auto;
+  a{
+    min-height: 1em;
+  }
+  svg{
+    height: .8em;
+    stroke: none;
+    fill: #1d1d1d;
+
+  }
+  div.login{
+    margin-right: 8px;
+  }
+  @media screen and (max-width: 710px) {
+    div.login{
+      display: none;
+    }
+  }
+}
+
 .router-container{
   padding-top: calc(48px);
   width: 100%;
@@ -40,7 +64,7 @@ nav li{
 
 .router-container>div{
   position: relative;
-  width: 600px;
+  width: 680px;
   max-width: 90%;
   margin: 82px auto 48px;
 }

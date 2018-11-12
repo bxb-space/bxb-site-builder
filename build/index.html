@@ -8,8 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:800&amp;text=InterstlaB -fidcogfm" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700,800" rel="stylesheet">
-  <link href="/static/css/reset.css" rel="stylesheet">
-  <link href="/static/css/functional.css" rel="stylesheet">
   <title>
     BxB Astrophysics
   </title>
@@ -119,6 +117,11 @@ header {
   background: #fff;
   z-index: 5;
 }
+@media screen and (max-width: 500px) {
+  header {
+    height: 60px;
+  }
+}
 nav {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   padding: 8px;
@@ -132,13 +135,32 @@ nav > ul {
 nav li {
   margin: 0 14px;
 }
+nav li.login {
+  margin-left: auto;
+}
+nav li.login a {
+  min-height: 1em;
+}
+nav li.login svg {
+  height: 0.8em;
+  stroke: none;
+  fill: #1d1d1d;
+}
+nav li.login div.login {
+  margin-right: 8px;
+}
+@media screen and (max-width: 710px) {
+  nav li.login div.login {
+    display: none;
+  }
+}
 .router-container {
   padding-top: calc(48px);
   width: 100%;
 }
 .router-container > div {
   position: relative;
-  width: 600px;
+  width: 680px;
   max-width: 90%;
   margin: 82px auto 48px;
 }
@@ -152,156 +174,21 @@ svg[logo] {
   mix-blend-mode: difference;
 }
 </style>
-  <style willbeasync>
-  h1 {
-  font-size: 42px;
-}
-h1.title {
-  font-weight: 300;
-  font-family: 'Saira SemiCondensed';
-  letter-spacing: 0.2px;
-  line-height: 1.2;
-  margin-bottom: 74px;
-}
-h2 {
-  font-size: 33px;
-  margin: 62px 0 32px;
-}
-h3 {
-  font-size: 27px;
-  font-weight: 700;
-  margin: 42px 0 18px;
-}
-h4 {
-  font-size: 23px;
-  font-weight: 700;
-  margin: 32px 0 8px;
-}
-h5 {
-  font-size: 19px;
-  font-weight: 500;
-  margin: 26px 0 8px;
-}
-h6 {
-  font-weight: 600;
-  font-size: 16px;
-  margin: 22px 0 8px;
-}
-
-
-
-
-
-.rel {
-  position: relative;
-}
-.abs {
-  position: absolute;
-}
-.pseudo {
-  position: relative;
-}
-.pseudo:before,
-.pseudo:after {
-  position: absolute;
-  content: "";
-}
-a,
-p,
-li {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.3;
-}
-a {
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.17s;
-}
-a:hover {
-  border-color: #ff7830;
-}
-strong {
-  color: #5b9aff;
-}
-p {
-  margin: 22px 0 36px;
-  /*p+p*/
-}
-p + p {
-  text-indent: 0.4em;
-}
-blockquote {
-  width: 90%;
-  margin: 24px auto 40px;
-  position: relative;
-}
-blockquote:before,
-blockquote:after {
-  position: absolute;
-  content: "";
-}
-blockquote:before {
-  top: 0;
-  bottom: 0;
-  left: -4%;
-  width: 2px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-blockquote p {
-  margin: 0 !important;
-}
-blockquote p + p {
-  margin-top: 12px;
-}
-.landing-page ul.workplan {
-  font-family: Saira;
-}
-.landing-page ul.workplan li {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 12px;
-  text-align: center;
-}
-.landing-page ul.workplan a {
-  color: #ff7830;
-  line-height: 0.7;
-  display: inline;
-}
-ul.emphase {
-  width: calc(100% - 12em);
-  margin: 0 auto;
-  position: relative;
-}
-ul.emphase:before,
-ul.emphase:after {
-  position: absolute;
-  content: "";
-}
-ul.emphase::before,
-ul.emphase::after {
-  top: 12px;
-  bottom: 7px;
-  width: 3px;
-  border-radius: 2px;
-  background-color: #ff7830;
-  opacity: 0.7;
-}
-ul.emphase::before {
-  left: -1.4em;
-}
-ul.emphase::after {
-  right: -1.4em;
-}
-
-  </style>
+  <link href="/static/css/style.css" rel="stylesheet">
 </head>
 <body>
   <div id="app">
     <header class="fix flex">
+      <!-- <style>
+      @media screen and (max-width: 600px){
+        nav li:not(.bxb-project){
+          display
+        }
+      }
+      </style> -->
       <nav class="full">
         <ul class="full flex">
-          <li>
+          <li class="bxb-project">
             <router-link>BxB Project</router-link>
           </li>
           <li>
@@ -316,8 +203,17 @@ ul.emphase::after {
           <li>
             <router-link to="/events">Events</router-link>
           </li>
-          <li hide>
-            Login
+          <li class="login" hide>
+            <a href="http://google.com" class="login flex center">
+              <div class="login">
+                login
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="login icon" viewBox="0 0 20 20">
+                <path class="cls-1"
+                d="M8.1,19.82a10,10,0,0,1-4-17.89A1.33,1.33,0,0,1,6,2.42H6a1.35,1.35,0,0,1-.41,1.7,7.33,7.33,0,1,0,5.71-1.33V9.67A1.33,1.33,0,0,1,10,11h0A1.33,1.33,0,0,1,8.67,9.67V1.07A1.07,1.07,0,0,1,9.74,0h0c4.77,0,9.48,3.82,10.16,8.54A10,10,0,0,1,8.1,19.82Z"
+                />
+              </svg>
+            </a>
           </li>
         </ul>
       </nav>
@@ -388,7 +284,7 @@ Vue.component('landing-page', {
     Interstellar B-fields crossing inflation B-modes
   </h1>
 
-  <p>Our work plan bridges <strong>data analysis, theoretical and statistical modelling, and component separation</strong>, building on the complementarities of expertise and data gathered in the BxB project.</p>
+  <p>Our work plan bridges <strong>data analysis, theoretical, statistical modelling, and component separation</strong>, building on the complementarities of expertise and data gathered in the BxB project.</p>
 
 <p>The project is organized into <strong>three Work Packages (WPs)</strong>, each dedicated to one of the three main goals of our study:</p>
 
@@ -588,13 +484,13 @@ const App = {
     now: '',
     before: '',
     routes: {
-      '/': { component: 'landing-page', name: 'BxB Project'},
-      '/publications': { component: 'publication-page', name: 'Publications' },
-      '/team': { component: 'team-page', name: 'Team' },
-      '/workplan': { component: 'workplan-page', name: 'Work Plan' },
-      '/events': { component: 'events-page', name: 'Events' },
+      '/': { component: 'landing-page'},
+      '/publications': { component: 'publication-page'},
+      '/team': { component: 'team-page'},
+      '/workplan': { component: 'workplan-page'},
+      '/events': { component: 'events-page'},
 
-      '/404': { component: 'error-404', name: '' },
+      '/404': { component: 'error-404'},
     },
   },
   vue: null

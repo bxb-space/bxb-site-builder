@@ -20,6 +20,7 @@ func main(){
 }
 
 func ServeTemplate(w http.ResponseWriter, r *http.Request){
+  check(BuildStaticAssets(buildStyle()))
   var t []byte = buildTemplate()
   w.Write(t)
   check(BuildFileTemplate(t))
@@ -34,9 +35,3 @@ func graspContent() interface{}{
   }
 }
 // err := tmpl.Execute(w, graspContent())
-
-
-
-func buildStaticAssets() {
-
-}

@@ -9,8 +9,6 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:800&amp;text=InterstlaB -fidcogfm" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700,800" rel="stylesheet">
-  <link href="/static/css/reset.css" rel="stylesheet">
-  <link href="/static/css/functional.css" rel="stylesheet">
   <title>
     BxB Astrophysics
   </title>
@@ -19,16 +17,21 @@
   {{- renderLESS "./src/styles/src/functional.css" -}}
   {{- renderLESS "./src/styles/src/critical.less" -}}
   </style>
-  <style willbeasync>
-  {{ template "style" .}}
-  </style>
+  <link href="/static/css/style.css" rel="stylesheet">
 </head>
 <body>
   <div id="app">
     <header class="fix flex">
+      <!-- <style>
+      @media screen and (max-width: 600px){
+        nav li:not(.bxb-project){
+          display
+        }
+      }
+      </style> -->
       <nav class="full">
         <ul class="full flex">
-          <li>
+          <li class="bxb-project">
             <router-link>BxB Project</router-link>
           </li>
           <li>
@@ -43,8 +46,17 @@
           <li>
             <router-link to="/events">Events</router-link>
           </li>
-          <li hide>
-            Login
+          <li class="login" hide>
+            <a href="http://google.com" class="login flex center">
+              <div class="login">
+                login
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="login icon" viewBox="0 0 20 20">
+                <path class="cls-1"
+                d="M8.1,19.82a10,10,0,0,1-4-17.89A1.33,1.33,0,0,1,6,2.42H6a1.35,1.35,0,0,1-.41,1.7,7.33,7.33,0,1,0,5.71-1.33V9.67A1.33,1.33,0,0,1,10,11h0A1.33,1.33,0,0,1,8.67,9.67V1.07A1.07,1.07,0,0,1,9.74,0h0c4.77,0,9.48,3.82,10.16,8.54A10,10,0,0,1,8.1,19.82Z"
+                />
+              </svg>
+            </a>
           </li>
         </ul>
       </nav>
@@ -75,13 +87,13 @@ const App = {
     now: '',
     before: '',
     routes: {
-      '/': { component: 'landing-page', name: 'BxB Project'},
-      '/publications': { component: 'publication-page', name: 'Publications' },
-      '/team': { component: 'team-page', name: 'Team' },
-      '/workplan': { component: 'workplan-page', name: 'Work Plan' },
-      '/events': { component: 'events-page', name: 'Events' },
+      '/': { component: 'landing-page'},
+      '/publications': { component: 'publication-page'},
+      '/team': { component: 'team-page'},
+      '/workplan': { component: 'workplan-page'},
+      '/events': { component: 'events-page'},
 
-      '/404': { component: 'error-404', name: '' },
+      '/404': { component: 'error-404'},
     },
   },
   vue: null
