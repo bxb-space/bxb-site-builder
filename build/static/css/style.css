@@ -116,7 +116,7 @@ blockquote p + p {
 }
 ul.emphase {
   width: calc(100% - 12em);
-  margin: 0 auto;
+  margin: 74px auto;
   position: relative;
 }
 @media screen and (max-width: 500px) {
@@ -131,8 +131,8 @@ ul.emphase:after {
 }
 ul.emphase::before,
 ul.emphase::after {
-  top: 12px;
-  bottom: 7px;
+  top: 10px;
+  bottom: 10px;
   width: 3px;
   border-radius: 2px;
   background-color: #ff7830;
