@@ -74,14 +74,14 @@ blockquote{
 }
 ul.emphase{
   width: calc(100% - 12em);
-  margin: 74px auto;
+  margin: 24px 0;
   @media screen and (max-width: 500px) {
     width: calc(100% - 4em);
   }
   .pseudo;
-  &::before,&::after{
-    top: 10px;
-    bottom: 10px;
+  &::before{
+    top: 5px;
+    bottom: 5px;
     width: 3px;
     border-radius: 2px;
     background-color: #ff7830;
@@ -92,5 +92,17 @@ ul.emphase{
   }
   &::after{
     right: -1.4em;
+  }
+}
+
+.landing-page ul.emphase{
+  margin: 74px auto;
+  &::before,&::after{
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 2px;
+    background-color: #ff7830;
+    opacity: 0.7;
   }
 }

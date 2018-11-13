@@ -1,36 +1,28 @@
-.interstellar-turbulence{
+.interstellar-matter{
   section{
     display: flex;
     flex-direction: column;
+    margin-bottom: 182px;
   }
-  img, section{
+  .img-credits, section, img{
     width: 100%;
-  }
-  h2:not(:first-of-type){
-    margin-top: 102px;
   }
   @media screen and (min-width: 1100px){
     section{
       flex-direction: row;
+      display: flex; justify-content: space-between;
       &:nth-of-type(2n){
         flex-direction: row-reverse;
-        img{
-          margin-left: 10%
-        }
-      }
-      &:nth-of-type(2n+1){
-        img{
-          margin-right: 10%
-        }
       }
     }
-    img{
-      width: 60%;
+    .img-credits{
+      width: 45%;
+
     }
     .caption{
-      width: 30%;
+      width: 38ch;
+      flex-grow: 0;
+      flex-shrink: 0;
     }
   }
-
-
 }

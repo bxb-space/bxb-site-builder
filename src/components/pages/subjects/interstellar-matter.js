@@ -1,5 +1,5 @@
-{{- define "interstellar-turbulence" -}}
-Vue.component('interstellar-turbulence', {
+{{- define "interstellar-matter" -}}
+Vue.component('interstellar-matter', {
   props: {},
   // props: [],
   components: {},
@@ -20,7 +20,7 @@ Vue.component('interstellar-turbulence', {
     Interstellar Turbulence
   </h2>
   <section>
-    <img src="/static/img/interstellar-matter.png"/>
+    <img-credits src="/static/img/interstellar-matter.png" credits="Kevin Blagrave"/>
 
     <div class="caption">
     {{readFile "assets/content/interstellar-matter/interstellar-turbulence.md" | renderMarkup}}
@@ -30,7 +30,7 @@ Vue.component('interstellar-turbulence', {
     Towards a 3D View
   </h2>
   <section>
-    <img src="/static/img/gaia-3d-view.png"/>
+    <img-credits src="/static/img/gaia-3d-view.png" credits="Rosine Lallement"/>
     <div class="caption">
     {{readFile "assets/content/interstellar-matter/3dview.md" | renderMarkup}}
     </div>

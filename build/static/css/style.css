@@ -130,7 +130,7 @@ blockquote p + p {
 }
 ul.emphase {
   width: calc(100% - 12em);
-  margin: 74px auto;
+  margin: 24px 0;
   position: relative;
 }
 @media screen and (max-width: 500px) {
@@ -143,10 +143,9 @@ ul.emphase:after {
   position: absolute;
   content: "";
 }
-ul.emphase::before,
-ul.emphase::after {
-  top: 10px;
-  bottom: 10px;
+ul.emphase::before {
+  top: 5px;
+  bottom: 5px;
   width: 3px;
   border-radius: 2px;
   background-color: #ff7830;
@@ -157,6 +156,18 @@ ul.emphase::before {
 }
 ul.emphase::after {
   right: -1.4em;
+}
+.landing-page ul.emphase {
+  margin: 74px auto;
+}
+.landing-page ul.emphase::before,
+.landing-page ul.emphase::after {
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 2px;
+  background-color: #ff7830;
+  opacity: 0.7;
 }
 
 .publication-reference {
@@ -191,34 +202,31 @@ a.login:hover svg {
   transition-timing-function: ease-in-out;
 }
 
-.interstellar-turbulence section {
+.interstellar-matter section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 182px;
 }
-.interstellar-turbulence img,
-.interstellar-turbulence section {
+.interstellar-matter .img-credits,
+.interstellar-matter section,
+.interstellar-matter img {
   width: 100%;
 }
-.interstellar-turbulence h2:not(:first-of-type) {
-  margin-top: 102px;
-}
 @media screen and (min-width: 1100px) {
-  .interstellar-turbulence section {
+  .interstellar-matter section {
     flex-direction: row;
+    display: flex;
+    justify-content: space-between;
   }
-  .interstellar-turbulence section:nth-of-type(2n) {
+  .interstellar-matter section:nth-of-type(2n) {
     flex-direction: row-reverse;
   }
-  .interstellar-turbulence section:nth-of-type(2n) img {
-    margin-left: 10%;
+  .interstellar-matter .img-credits {
+    width: 45%;
   }
-  .interstellar-turbulence section:nth-of-type(2n+1) img {
-    margin-right: 10%;
-  }
-  .interstellar-turbulence img {
-    width: 60%;
-  }
-  .interstellar-turbulence .caption {
-    width: 30%;
+  .interstellar-matter .caption {
+    width: 38ch;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }

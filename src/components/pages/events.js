@@ -15,6 +15,15 @@ Vue.component('events-page', {
   },
   template: `
 <div :class="$options.name">
+<h3>
+À venir
+</h3>
+[...]
+<h3>
+Passées
+</h3>
+[...]
+
 
 </div>
 `

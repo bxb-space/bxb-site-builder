@@ -19,9 +19,9 @@ Vue.component('publication-reference', {
   },
   template: `
 <div class="rel" :class="$options.name">
-    <div class="title">
+    <a class="title" :href="refs.link">
       \{\{refs.title\}\}
-    </div>
+    </a>
     <div class="journal">
       \{\{refs.journal\}\}
     </div>
