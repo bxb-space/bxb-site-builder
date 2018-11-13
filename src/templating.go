@@ -30,6 +30,9 @@ func buildTemplate() []byte{
     "./src/components/pages/team.js",
     "./src/components/pages/workplan.js",
     "./src/components/pages/events.js",
+
+    "./src/components/pages/modules/publication-ref.js",
+    "./src/components/pages/subjects/interstellar-turbulence.js",
   }
 
 

@@ -80,6 +80,31 @@
 {{template "router-link" .}}
 {{template "router-view" .}}
 
+{{template "publication-reference" .}}
+{{template "interstellar-turbulence" .}}
+
+
+Vue.prototype.$xhr = {
+  get: function(url, callback, errorcallback){
+    const req = new XMLHttpRequest()
+    req.onreadystatechange = ()=>{
+      if (req.readyState === 4) {
+        if (req.status === 200) {
+          callback(req)
+          // console.log("succes", req.responseText)
+        } else {
+          if (errorcallback){
+            // errorcallback(xhr).bind(this)
+          } else {
+            console.log("xhr error", req.status, req.statusText)
+          }
+        }
+      }
+    }
+    req.open('GET', url, true)
+    req.send(null)
+  }
+}
 
 
 const App = {
@@ -92,6 +117,7 @@ const App = {
       '/team': { component: 'team-page'},
       '/workplan': { component: 'workplan-page'},
       '/events': { component: 'events-page'},
+      '/explore/interstellar-turbulence': { component: 'interstellar-turbulence'},
 
       '/404': { component: 'error-404'},
     },

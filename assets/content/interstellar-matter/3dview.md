@@ -1,0 +1,1 @@
+The combination of the Gaia data with observational tracers of interstellar matter opens the possibility to map the density structure and magnetic fields in 3 dimensions. This is illustrated with a 3D image of matter in the Solar Neighborhood built combining stellar reddening  and parallaxes. 

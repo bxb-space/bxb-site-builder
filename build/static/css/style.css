@@ -32,6 +32,20 @@ h6 {
   font-size: 16px;
   margin: 22px 0 8px;
 }
+.publication-page h2,
+.publication-page h3 {
+  font-weight: 200;
+}
+.publication-page h4 {
+  font-weight: 500;
+}
+h2,
+h3 {
+  font-weight: 200;
+}
+h4 {
+  font-weight: 500;
+}
 
 .rel {
   position: relative;
@@ -145,10 +159,66 @@ ul.emphase::after {
   right: -1.4em;
 }
 
+.publication-reference {
+  margin: 24px 0 27px;
+}
+.publication-reference ul.authors li {
+  display: inline;
+}
+.publication-reference ul.authors li + li {
+  margin-left: 2px;
+}
+.publication-reference .title {
+  color: #ff7830;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+.publication-reference .journal {
+  font-size: 0.7em;
+}
+.publication-reference .authors {
+  font-family: Saira;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+
 a.login svg {
   transition: transform 0.27s cubic-bezier(0.26, 2, 0.6, 0.7);
 }
 a.login:hover svg {
   transform: rotate(1turn);
   transition-timing-function: ease-in-out;
+}
+
+.interstellar-turbulence section {
+  display: flex;
+  flex-direction: column;
+}
+.interstellar-turbulence img,
+.interstellar-turbulence section {
+  width: 100%;
+}
+.interstellar-turbulence h2:not(:first-of-type) {
+  margin-top: 102px;
+}
+@media screen and (min-width: 1100px) {
+  .interstellar-turbulence section {
+    flex-direction: row;
+  }
+  .interstellar-turbulence section:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+  .interstellar-turbulence section:nth-of-type(2n) img {
+    margin-left: 10%;
+  }
+  .interstellar-turbulence section:nth-of-type(2n+1) img {
+    margin-right: 10%;
+  }
+  .interstellar-turbulence img {
+    width: 60%;
+  }
+  .interstellar-turbulence .caption {
+    width: 30%;
+  }
 }

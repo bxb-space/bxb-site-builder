@@ -7,16 +7,7 @@ Vue.component('router-link', {
     }
   },
   components: {},
-  created(){
-    // if (this.to === '') {this.sanitizedTo = '/'} else {
-    //   if (this.to.length > 0){
-    //     if (this.to[0] !== "/") {this.sanitizedTo = "/" + this.to} else {
-    //       this.sanitizeTo = this.to
-    //     }
-    //   }
-    // }
-
-  },
+  // created(){},
   // mounted(){},
   // updated(){},
   // activated(){},
@@ -26,7 +17,7 @@ Vue.component('router-link', {
   methods: {},
   data() {
     return {
-      sanitizedTo: '/'
+
     }
   },
   template: `<a :href="'/#' + to" :class="$options.name"><slot></slot></a>`
