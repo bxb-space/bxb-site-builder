@@ -2,6 +2,9 @@
 
 {{ renderLESS "src/styles/src/headlines.less"}}
 {{ renderLESS "src/styles/src/text.less"}}
+{{ renderLESS "src/styles/src/modules.less"}}
+
 {{ renderLESS "src/styles/src/animation.less"}}
+{{ renderLESS "src/styles/src/subjects.less"}}
 
 {{- end -}}

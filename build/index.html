@@ -164,6 +164,11 @@ nav li.login div.login {
   max-width: 90%;
   margin: 82px auto 48px;
 }
+@media screen and (min-width: 1100px) {
+  .router-container > div {
+    width: 1100px;
+  }
+}
 svg[logo] {
   width: 220px;
   /* z-index: -1; */
@@ -190,6 +195,9 @@ svg[logo] {
         <ul class="full flex">
           <li class="bxb-project">
             <router-link>BxB Project</router-link>
+          </li>
+          <li>
+            <router-link to="/explore">Explore</router-link>
           </li>
           <li>
             <router-link to="/workplan">Work Plan</router-link>
@@ -249,7 +257,11 @@ Vue.component('landing-page', {
   props: {},
   components: {},
   // created(){},
-  // mounted(){},
+  mounted(){
+    this.$xhr.get('/static/content/workpackages.json', function(xhr){
+      this.workPackages = JSON.parse(xhr.responseText)
+    }.bind(this))
+  },
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
@@ -258,23 +270,7 @@ Vue.component('landing-page', {
   methods: {},
   data() {
     return {
-      workPackages : [
-        {
-           "name": "3D mapping of the ordered β field from the Sun to the Galactic halo",
-           "description": "",
-           "members": [""]
-        },
-        {
-           "name": "Statistical description of the turbulent magnetized diffuse ISM",
-           "description": "",
-           "members": [""]
-        },
-        {
-           "name": "Separation between Galactic and primordial CMB B-modes",
-           "description": "",
-           "members": [""]
-        }
-      ]
+      workPackages : []
     }
   },
   template: `
@@ -309,7 +305,7 @@ Research is funded by the French national science foundation (Agence National de
 </div>
 `
 })
-Vue.component('publication-page', {
+Vue.component('explore-page', {
   props: {},
   components: {},
   // created(){},
@@ -321,10 +317,88 @@ Vue.component('publication-page', {
   computed: {},
   methods: {},
   data() {
-    return {}
+    return {
+      topics: [
+        {
+          link: "/explore/interstellar-dust",
+          name: "Interstellar Dust"
+        },
+        {
+          link: "/explore/grain-alignement",
+          name: "Grain Alignment"
+        },
+        {
+          link: "/explore/cmb-polarization",
+          name: "CMB Polarization"
+        },
+        {
+          link: "/explore/interstellar-matter",
+          name: "Interstellar Matter"
+        },
+        {
+          link: "/explore/magnetic-fields",
+          name: "Magnetic Fields"
+        },
+        {
+          link: "/explore/dust-polarization",
+          name: "Dust Polarization"
+        },
+      ]
+    }
   },
   template: `
 <div :class="$options.name">
+  <ul>
+    <li v-for="topic in topics">
+      <router-link :to="topic.link">
+        \{\{topic.name\}\}
+      </router-link>
+    </li>
+  </ul>
+</div>
+`
+})
+Vue.component('publication-page', {
+  props: {},
+  components: {},
+  // created(){},
+  mounted(){
+    this.$xhr.get('/static/content/publications.json', function(xhr){
+      this.publications = JSON.parse(xhr.responseText)
+    }.bind(this))
+  },
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {
+  },
+  data() {
+    return {
+      publications:"yahe"
+    }
+  },
+  template: `
+<div :class="$options.name">
+<h2>BxB Publications</h2>
+<ul>
+  <li v-for="pub in publications.bxb">
+    <publication-reference :refs="pub"/>
+  </li>
+</ul>
+<h3>Past publications from team members related to the BxB project</h3>
+<ul>
+  <li v-for="theme in publications.past">
+    <h4>\{\{theme.title\}\}</h4>
+    <ul>
+      <li v-for="pub in theme.list">
+        <publication-reference :refs="pub"/>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 </div>
 `
 })
@@ -332,7 +406,11 @@ Vue.component('team-page', {
   props: {},
   components: {},
   // created(){},
-  // mounted(){},
+  mounted(){
+    this.$xhr.get('/static/content/labs.json', function(xhr){
+      this.peopleByLabs = JSON.parse(xhr.responseText)
+    }.bind(this))
+  },
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
@@ -340,11 +418,24 @@ Vue.component('team-page', {
   computed: {},
   methods: {},
   data() {
-    return {}
+    return {
+      peopleByLabs: []
+    }
   },
   template: `
 <div :class="$options.name">
-  
+  The BxB team gathers scientists with complementary expertise in interstellar medium physics, cosmology, and data science working in seven distinct French institutes.
+
+  <ul>
+    <li v-for="lab in peopleByLabs">
+    <h4>\{\{lab.name\}\}</h4>
+    <ul class="emphase">
+      <li v-for="people in lab.people">
+        \{\{people\}\}
+      </li>
+    </ul>
+    </li>
+  </ul>
 </div>
 `
 })
@@ -352,7 +443,11 @@ Vue.component('workplan-page', {
   props: {},
   components: {},
   // created(){},
-  // mounted(){},
+  mounted(){
+    this.$xhr.get('/static/content/workpackages.json', function(xhr){
+      this.workPackages = JSON.parse(xhr.responseText)
+    }.bind(this))
+  },
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
@@ -360,10 +455,21 @@ Vue.component('workplan-page', {
   computed: {},
   methods: {},
   data() {
-    return {}
+    return {
+      workPackages: []
+    }
   },
   template: `
 <div :class="$options.name">
+<ul>
+  <li v-for="wp in workPackages">
+    <h2>\{\{wp.name\}\}</h2>
+    <div class="description">
+    \{\{wp.description\}\}
+    </div>
+  </li>
+</ul>
+
 </div>
 `
 })
@@ -383,6 +489,15 @@ Vue.component('events-page', {
   },
   template: `
 <div :class="$options.name">
+<h3>
+À venir
+</h3>
+[...]
+<h3>
+Passées
+</h3>
+[...]
+
 
 </div>
 `
@@ -395,16 +510,7 @@ Vue.component('router-link', {
     }
   },
   components: {},
-  created(){
-    // if (this.to === '') {this.sanitizedTo = '/'} else {
-    //   if (this.to.length > 0){
-    //     if (this.to[0] !== "/") {this.sanitizedTo = "/" + this.to} else {
-    //       this.sanitizeTo = this.to
-    //     }
-    //   }
-    // }
-
-  },
+  // created(){},
   // mounted(){},
   // updated(){},
   // activated(){},
@@ -414,7 +520,7 @@ Vue.component('router-link', {
   methods: {},
   data() {
     return {
-      sanitizedTo: '/'
+
     }
   },
   template: `<a :href="'/#' + to" :class="$options.name"><slot></slot></a>`
@@ -477,6 +583,133 @@ Vue.component('router-view', {
 `
 })
 
+Vue.component('img-credits', {
+  props: ["src", "credits"],
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {
+  },
+  data() {
+    return {
+
+    }
+  },
+  template: `
+<div class="rel img-container" :class="$options.name">
+<img :src="src"/>
+<div class="credits">
+  Credit: \{\{credits\}\}
+</div>
+</div>
+`
+})
+Vue.component('publication-reference', {
+  props: ["refs"],
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {
+  },
+  data() {
+    return {
+
+    }
+  },
+  template: `
+<div class="rel" :class="$options.name">
+    <a class="title" :href="refs.link">
+      \{\{refs.title\}\}
+    </a>
+    <div class="journal">
+      \{\{refs.journal\}\}
+    </div>
+    <ul class="authors">
+      <li v-for="(author, index) in refs.authors">
+        \{\{author\}\}
+        <span v-if="index + 2 === refs.authors.length">and</span>
+        <span v-else-if="index + 1 === refs.authors.length"></span>
+        <span v-else>,</span>
+      </li>
+    </ul>
+  </div>
+`
+})
+Vue.component('interstellar-matter', {
+  props: {},
+  // props: [],
+  components: {},
+  // created(){},
+  // mounted(){},
+  // updated(){},
+  // activated(){},
+  // beforeDestroy(){},
+  watch: {},
+  computed: {},
+  methods: {},
+  data() {
+    return {}
+  },
+  template: `
+  <div :class="$options.name">
+  <h2>
+    Interstellar Turbulence
+  </h2>
+  <section>
+    <img-credits src="/static/img/interstellar-matter.png" credits="Kevin Blagrave"/>
+
+    <div class="caption">
+    <p><strong>Illustration of interstellar turbulence.</strong>
+The RGB colors represent maps of HI 21cm line emission in different velocity channel maps. The structure of matter and magnetic fields in space emerges from interstellar turbulence.  This is why interstellar matter is a main science topic of the BxB project.</p>
+
+    </div>
+  </section>
+  <h2>
+    Towards a 3D View
+  </h2>
+  <section>
+    <img-credits src="/static/img/gaia-3d-view.png" credits="Rosine Lallement"/>
+    <div class="caption">
+    <p>The combination of the Gaia data with observational tracers of interstellar matter opens the possibility to map the density structure and magnetic fields in 3 dimensions. This is illustrated with a 3D image of matter in the Solar Neighborhood built combining stellar reddening  and parallaxes.</p>
+
+    </div>
+  </section>
+  </div>
+  `
+})
+
+
+Vue.prototype.$xhr = {
+  get: function(url, callback, errorcallback){
+    const req = new XMLHttpRequest()
+    req.onreadystatechange = ()=>{
+      if (req.readyState === 4) {
+        if (req.status === 200) {
+          callback(req)
+          // console.log("succes", req.responseText)
+        } else {
+          if (errorcallback){
+            // errorcallback(xhr).bind(this)
+          } else {
+            console.log("xhr error", req.status, req.statusText)
+          }
+        }
+      }
+    }
+    req.open('GET', url, true)
+    req.send(null)
+  }
+}
 
 
 const App = {
@@ -489,6 +722,8 @@ const App = {
       '/team': { component: 'team-page'},
       '/workplan': { component: 'workplan-page'},
       '/events': { component: 'events-page'},
+      '/explore': { component: 'explore-page'},
+      '/explore/interstellar-matter': { component: 'interstellar-matter'},
 
       '/404': { component: 'error-404'},
     },

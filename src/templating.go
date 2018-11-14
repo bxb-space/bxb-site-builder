@@ -26,10 +26,15 @@ func buildTemplate() []byte{
     "./src/components/router/router-view.js",
     "./src/components/pages/error404.js",
     "./src/components/pages/landing.js",
+    "./src/components/pages/explore.js",
     "./src/components/pages/publications.js",
     "./src/components/pages/team.js",
     "./src/components/pages/workplan.js",
     "./src/components/pages/events.js",
+
+    "./src/components/pages/modules/publication-ref.js",
+    "./src/components/pages/modules/img-credits.js",
+    "./src/components/pages/subjects/interstellar-matter.js",
   }
 
 

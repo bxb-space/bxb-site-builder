@@ -3,7 +3,11 @@ Vue.component('landing-page', {
   props: {},
   components: {},
   // created(){},
-  // mounted(){},
+  mounted(){
+    this.$xhr.get('/static/content/workpackages.json', function(xhr){
+      this.workPackages = JSON.parse(xhr.responseText)
+    }.bind(this))
+  },
   // updated(){},
   // activated(){},
   // beforeDestroy(){},
@@ -12,23 +16,7 @@ Vue.component('landing-page', {
   methods: {},
   data() {
     return {
-      workPackages : [
-        {
-           "name": "3D mapping of the ordered β field from the Sun to the Galactic halo",
-           "description": "",
-           "members": [""]
-        },
-        {
-           "name": "Statistical description of the turbulent magnetized diffuse ISM",
-           "description": "",
-           "members": [""]
-        },
-        {
-           "name": "Separation between Galactic and primordial CMB B-modes",
-           "description": "",
-           "members": [""]
-        }
-      ]
+      workPackages : []
     }
   },
   template: `

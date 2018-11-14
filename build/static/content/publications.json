@@ -1,0 +1,133 @@
+{
+  "bxb": [
+    {
+      "authors": ["Alves, M. I. R.", "Boulanger, F.", "Ferrière, K.", "Montier, L."],
+      "journal": "2018, A&A  611, L5",
+      "title": "The Local Bubble: a magnetic veil to our Galaxy",
+      "link": "http://cdsads.u-strasbg.fr/abs/2018A%26A...611L...5A"
+    },
+    {
+      "authors": ["Errard, J.", "Stompor, R."],
+      "journal": "2018, ArXiv: 1811.00479",
+      "title": "Characterizing bias on large scale CMB B-modes after galactic foregrounds cleaning",
+      "link": "http://cdsads.u-strasbg.fr/abs/2018arXiv181100479E"
+    },
+    {
+      "authors": ["Levrier, F.", "Neveu, J.", "Falgarone, E.", "al."],
+      "journal": "2018 A&A 614, 124",
+      "title": "Statistics of the polarized submillimeter emission maps from thermal dust in the turbulent, magnetized, diffuse ISM",
+      "link": "http://cdsads.u-strasbg.fr/abs/2018A%26A...614A.124L"
+    },
+    {
+      "authors": ["Planck Collaboration"],
+      "journal": "2018 A&A in press, Planck 2018 results. XI.",
+      "title": "Polarized dust foregrounds",
+      "link": "http://cdsads.u-strasbg.fr/abs/2018arXiv180104945P"
+    },
+    {
+      "authors": ["Planck Collaboration"],
+      "journal": "2018 A&A submitted, Planck 2018 results. XII.",
+      "title": "Galactic astrophysics using polarized dust emission",
+      "link": "http://cdsads.u-strasbg.fr/abs/2018arXiv180706212P"
+    }
+  ],
+  "past": [
+    {
+      "title": "The Magnetized interstellar medium",
+      "list": [
+        {
+          "authors": ["Momferratos, G.", "Lesaffre, P.", "Falgarone, E.", "Pineau des Forêts, G."],
+          "journal": "2014, MNRAS 443, 86",
+          "title": "Turbulent energy dissipation and intermittency in ambipolar diffusion magnetohydrodynamics",
+          "link": "http://cdsads.u-strasbg.fr/abs/2014MNRAS.443...86M"
+        },
+        {
+          "authors": ["Falgarone, E.", "Momferratos, G.", "Lesaffre, P."],
+          "journal": " 2015, ASSL 407, 227",
+          "title": "The Intermittency of ISM turbulence: What do the observations tell us?",
+          "link": "http://cdsads.u-strasbg.fr/abs/2015ASSL..407..227F"
+        },
+        {
+          "authors": ["Iffrig, O.",  "Hennebelle, P."],
+          "journal": "2017, A&A 604, 70",
+          "title": "Structure distribution and turbulence in self-consistently supernova-driven ISM of multiphase magnetized galactic discs",
+          "link": "http://cdsads.u-strasbg.fr/abs/2017A%26A...604A..70I"
+        },
+        {
+          "authors": ["Terral, P.", "Ferrière, K."],
+          "journal": "2017 A&A 600, 29",
+          "title": "Constraints from Faraday rotation on the magnetic field structure in the Galactic halo",
+          "link": "http://cdsads.u-strasbg.fr/abs/2017A%26A...600A..29T"
+        }
+      ]
+    },
+    {
+      "title": "Interstellar dust",
+      "list": [
+        {
+          "authors": ["Guillet, V.",  "Fanciullo, L.", "Verstraete, L.", "al."],
+          "journal": "2018, A&A 610, 16",
+          "title": "Dust models compatible with Planck intensity and polarization data in translucent lines of sight",
+          "link": "http://cdsads.u-strasbg.fr/abs/2018A%26A...610A..16G"
+        },
+        {
+          "authors": ["Fanciullo, L.", "Guillet, V.", "Aniano, G.", "al."],
+          "journal": "2015, A&A 580, 136",
+          "title": "Dust models post-Planck: constraining the far-infrared opacity of dust in the diffuse interstellar medium",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "title": "Data science",
+      "list": [
+        {
+          "authors": ["Sifre, L.", "Mallat, S."],
+          "journal": "IEEE Conference on Computer Vision and Pattern Recognition, Portland, pp. 1233",
+          "title": "Rotation, Scaling and Deformation Invariant Scattering for Texture Discrimination",
+          "link": "http://ieeexplore.ieee.org/document/6619007/"
+        },
+        {
+          "authors": ["Bruna, J.", "Mallat, S"],
+          "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35,  pp. 1872",
+          "title": "Invariant Scattering Convolution Networks",
+          "link": "http://ieeexplore.ieee.org/document/6522407/"
+        }
+      ]
+    },
+    {
+      "title": "Statistical modelling CMB foregrounds",
+      "list": [
+        {
+          "authors": ["Ghosh, T.", "Boulanger, F.", "Martin, P. G.", "al."],
+          "journal": "2017, A&A 601, A71",
+          "title": "Modelling and simulation of large-scale polarized dust emission over the southern Galactic cap using the GASS HI data",
+          "link": ""
+        },
+        {
+          "authors": ["Vansyngel, F.", "Boulanger, F.", "Ghosh, T.", "al."],
+          "journal": "2017 A&A 603, A62",
+          "title": "Statistical simulations of the dust foreground to CMB polarization",
+          "link": "http://cdsads.u-strasbg.fr/abs/2017A%26A...603A..62V"
+        }
+      ]
+    },
+    {
+      "title": "Forecasts CMB experiments",
+      "list": [
+        {
+          "authors": ["Errard, J.", "Feeney, S. M.", "Peiris, H. V.", "Jaffe, A. H."],
+          "journal": "2016 JCAP 03, 053",
+          "title": "Robust forecasts on fundamental physics from the foreground-obscured, gravitationally-lensed CMB polarization",
+          "link": "http://cdsads.u-strasbg.fr/abs/2016JCAP...03..052E"
+        },
+        {
+          "authors": ["Stompor, R.", "Errard, J.", "Poletti, D."],
+          "journal": "2016 Phys. Rev. D, 94, 8",
+          "title": "Forecasting performance of CMB experiments in the presence of complex foreground contaminations",
+          "link": "http://cdsads.u-strasbg.fr/abs/2016PhRvD..94h3526S"
+        }
+      ]
+    }
+  ]
+}

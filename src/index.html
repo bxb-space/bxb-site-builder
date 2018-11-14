@@ -35,6 +35,9 @@
             <router-link>BxB Project</router-link>
           </li>
           <li>
+            <router-link to="/explore">Explore</router-link>
+          </li>
+          <li>
             <router-link to="/workplan">Work Plan</router-link>
           </li>
           <li>
@@ -73,6 +76,7 @@
 
 {{template "error-404" .}}
 {{template "landing-page" .}}
+{{template "explore-page" . }}
 {{template "publication-page" . }}
 {{template "team-page" .}}
 {{template "workplan-page" .}}
@@ -80,6 +84,32 @@
 {{template "router-link" .}}
 {{template "router-view" .}}
 
+{{template "img-credits" .}}
+{{template "publication-reference" .}}
+{{template "interstellar-matter" .}}
+
+
+Vue.prototype.$xhr = {
+  get: function(url, callback, errorcallback){
+    const req = new XMLHttpRequest()
+    req.onreadystatechange = ()=>{
+      if (req.readyState === 4) {
+        if (req.status === 200) {
+          callback(req)
+          // console.log("succes", req.responseText)
+        } else {
+          if (errorcallback){
+            // errorcallback(xhr).bind(this)
+          } else {
+            console.log("xhr error", req.status, req.statusText)
+          }
+        }
+      }
+    }
+    req.open('GET', url, true)
+    req.send(null)
+  }
+}
 
 
 const App = {
@@ -92,6 +122,8 @@ const App = {
       '/team': { component: 'team-page'},
       '/workplan': { component: 'workplan-page'},
       '/events': { component: 'events-page'},
+      '/explore': { component: 'explore-page'},
+      '/explore/interstellar-matter': { component: 'interstellar-matter'},
 
       '/404': { component: 'error-404'},
     },

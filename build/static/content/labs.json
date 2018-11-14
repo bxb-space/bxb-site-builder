@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Laboratoire Astroparticules et Cosmologie",
+    "acronym": "APC",
+    "people": [
+      "Josquin Errard",
+      "Radek Stompor"
+    ]
+  },
+  {
+    "name": "Ecole Normale Supérieure",
+    "acronym": "ENS",
+    "people": [
+      "Erwan Allys",
+      "François Boulanger",
+      "Edith Falgarone",
+      "Francois Levrier",
+      "Pierre Lesaffre",
+      "Stéphane Mallat"
+    ]
+  },
+  {
+    "name": "Institut d’Astrophysique Spatiale",
+    "acronym": "IAS",
+    "people": [
+      "Julien Grain",
+      "Vincent Guillet"
+    ]
+  },
+  {
+    "name": "Institut de Recherche en Astrophysique et Planétologie",
+    "acronym": "IRAP",
+    "people": [
+      "Jonathan Aumont",
+      "Anthony Banday",
+      "Jean-Philippe Bernard",
+      "Katia Ferrière",
+      "Ludovic Montier",
+      "Isabelle Ristorcelli"
+    ]
+  },
+  {
+    "name": "Laboratoire de l’Accélérateur Linéaire",
+    "acronym": "LAL",
+    "people": [
+      "Jeremy Neveu",
+      "Matthieu Tristram"
+    ]
+  },
+  {
+    "name": "Observatoire de Paris",
+    "acronym": "GEPI",
+    "people": [
+      "Rosine Lallement­"
+    ]
+  },
+  {
+    "name": "Service d’Astrophysique du CEA",
+    "acronym": "SAp/AIM",
+    "people": [
+      "Cedric Colling",
+      "Patrick Hennebelle",
+      "Doug Marshall",
+      "Marc-­Antoine Miville Deschênes"
+    ]
+  }
+]
