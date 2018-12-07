@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 911.02 601.05">
+<svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-15 -15 911.02 601.05">
   <defs>
     <style>
       a{
@@ -27,7 +27,7 @@
 
     </style>
   </defs>
-  <title>six-pentagons</title>
+  <image xlink:href="http://www.bxb.space/static/img/bxb-logo.png" x="0" y="0" height="100" width="100" />
     <a class="" transform="translate(-12, 0)">
       <path class="" d="M230.47,292.18,150,402.88a11,11,0,0,1-12.3,4L7.6,364.59A11,11,0,0,1,0,354.12V217.29a11,11,0,0,1,7.6-10.46l130.14-42.29a11,11,0,0,1,12.3,4l80.43,110.7A11,11,0,0,1,230.47,292.18Z"/>
       <text x="0" transform="translate(104.81, -36)" y="285.5">
@@ -40,6 +40,7 @@
       </text>
       <!-- <circle class="cls-3" cx="104.81" cy="285.5" r="7"/> -->
     </a>
+
     <a class="" transform="translate(12, 0)">
       <path class="" d="M731,402.87l-80.42-110.7a11,11,0,0,1,0-12.94L731,168.54a11,11,0,0,1,12.3-4l130.14,42.28a11,11,0,0,1,7.6,10.46V354.12a11,11,0,0,1-7.6,10.47L743.28,406.87A11,11,0,0,1,731,402.87Z"/>
       <text x="0" transform="translate(776.55, -36)" y="284.98">
