@@ -1,4 +1,4 @@
-### 3D mapping of the ordered magnetic field in the Solar neighborhood
+### WP1. 3D mapping of the ordered magnetic field in the Solar neighborhood
 
 Our perspective on the interstellar medium is moving from sky images to a 3D view. This revolution is driven by the advent of large-scale
 stellar surveys and the Gaia space mission. Within BxB, we have the ambition to extend this breakthrough
