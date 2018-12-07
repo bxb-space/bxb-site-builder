@@ -14,13 +14,13 @@ Vue.component('events-page', {
     return {}
   },
   template: `
-<div :class="$options.name">
+<div :class="$options.name" class="small">
 <h3>
-À venir
+Upcoming
 </h3>
 [...]
 <h3>
-Passées
+Attended
 </h3>
 [...]
 

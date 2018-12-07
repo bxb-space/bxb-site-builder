@@ -21,7 +21,7 @@ Vue.component('publication-page', {
     }
   },
   template: `
-<div :class="$options.name">
+<div :class="$options.name" class="small">
 <h2>BxB Publications</h2>
 <ul>
   <li v-for="pub in publications.bxb">

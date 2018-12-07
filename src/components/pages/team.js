@@ -20,11 +20,11 @@ Vue.component('team-page', {
     }
   },
   template: `
-<div :class="$options.name">
+<div :class="$options.name" class="small">
   {{readFile "assets/content/team-page-intro.md"}}
   <ul>
     <li v-for="lab in peopleByLabs">
-    <h4>\{\{lab.name\}\}</h4>
+    <h4>\{\{lab.name\}\} (\{\{lab.acronym\}\})</h4>
     <ul class="emphase">
       <li v-for="people in lab.people">
         \{\{people\}\}

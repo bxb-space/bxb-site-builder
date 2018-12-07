@@ -19,9 +19,9 @@ Vue.component('router-view', {
         this.setClientSideSeparator(this.clientSideHash())
         this.findRoute(this.clientSideHash())
       } else {
-        // console.log("route has been normalized")
+        console.log("route has been normalized")
         this.setClientSideSeparator()
-        this.currentPage = App.router.routes['/']
+        this.currentPage = 'landing-page'
       }
     },
     setClientSideSeparator: function(hash){

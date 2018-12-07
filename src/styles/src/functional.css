@@ -34,3 +34,15 @@
 [notdone]{
   opacity: .6
 }
+[href=""]{
+  pointer-events: none;
+}
+
+.icon{
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 1.4px;
+  stroke: #5b9aff;
+  fill: none;
+  opacity:.9;
+}

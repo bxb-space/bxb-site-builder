@@ -22,18 +22,38 @@
 <body>
   <div id="app">
     <header class="fix flex">
-      <!-- <style>
-      @media screen and (max-width: 600px){
-        nav li:not(.bxb-project){
-          display
-        }
-      }
-      </style> -->
-      <nav class="full">
+      <nav class="full flex noselect">
+        <div class="mobile-nav" :class="{open: ui.mobileNav}">
+          <div class="flex center mobile-nav-reveal"
+          @click="ui.mobileNav = !ui.mobileNav">
+            <svg class="icon chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <nav>
+            <ul class="flex col">
+              <li @click="handleMobileNavDirect">
+                <router-link to="/explore">Explore</router-link>
+              </li>
+              <li @click="handleMobileNavDirect">
+                <router-link to="/workplan">Work Plan</router-link>
+              </li>
+              <li @click="handleMobileNavDirect">
+                <router-link to="/team">Team</router-link>
+              </li>
+              <li @click="handleMobileNavDirect">
+                <router-link to="/publications">Publications</router-link>
+              </li>
+              <li @click="handleMobileNavDirect">
+                <router-link to="/events">Events</router-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="bxb-project li"  @click="handleMobileNavDirect">
+          <router-link>BxB Project</router-link>
+        </div>
         <ul class="full flex">
-          <li class="bxb-project">
-            <router-link>BxB Project</router-link>
-          </li>
           <li>
             <router-link to="/explore">Explore</router-link>
           </li>
@@ -49,19 +69,19 @@
           <li>
             <router-link to="/events">Events</router-link>
           </li>
-          <li class="login" hide>
-            <a href="http://google.com" class="login flex center">
-              <div class="login">
-                login
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="login icon" viewBox="0 0 20 20">
-                <path class="cls-1"
-                d="M8.1,19.82a10,10,0,0,1-4-17.89A1.33,1.33,0,0,1,6,2.42H6a1.35,1.35,0,0,1-.41,1.7,7.33,7.33,0,1,0,5.71-1.33V9.67A1.33,1.33,0,0,1,10,11h0A1.33,1.33,0,0,1,8.67,9.67V1.07A1.07,1.07,0,0,1,9.74,0h0c4.77,0,9.48,3.82,10.16,8.54A10,10,0,0,1,8.1,19.82Z"
-                />
-              </svg>
-            </a>
-          </li>
         </ul>
+        <div class="login li">
+          <a href="http://google.com" class="login flex center">
+            <div class="login">
+              login
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="login icon" viewBox="0 0 20 20">
+              <path class="cls-1"
+              d="M8.1,19.82a10,10,0,0,1-4-17.89A1.33,1.33,0,0,1,6,2.42H6a1.35,1.35,0,0,1-.41,1.7,7.33,7.33,0,1,0,5.71-1.33V9.67A1.33,1.33,0,0,1,10,11h0A1.33,1.33,0,0,1,8.67,9.67V1.07A1.07,1.07,0,0,1,9.74,0h0c4.77,0,9.48,3.82,10.16,8.54A10,10,0,0,1,8.1,19.82Z"
+              />
+            </svg>
+          </a>
+        </div>
       </nav>
     </header>
     <div class="router-container">
@@ -136,7 +156,16 @@ const App = {
 App.vue = new Vue({
   el: '#app',
   data: {
-
+    ui: {
+      mobileNav: false,
+    }
+  },
+  methods: {
+    handleMobileNavDirect: function(){
+      console.log("yahe", this.ui.mobileNav)
+      this.ui.mobileNav = false
+      console.log(this.ui.mobileNav)
+    }
   }
 })
 

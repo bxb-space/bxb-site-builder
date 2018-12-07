@@ -20,7 +20,7 @@ Vue.component('workplan-page', {
     }
   },
   template: `
-<div :class="$options.name">
+<div :class="$options.name" class="small">
 <ul>
   <li v-for="wp in workPackages">
     <h2>\{\{wp.name\}\}</h2>
