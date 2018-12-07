@@ -33,10 +33,10 @@ binds the search for primordial B-modes to the astrophysics of the dusty magneti
 BxB has ambitious goals that involve inter-disciplinary collaborations.
 Its success will rest on the BxB team ability to meet three main challenges.
 
-- (i) Combine the 3D density mapping of the ISM derived from stellar surveys including Gaia astrometry, with polarization data and theoretical models to build a 3D model of the ordered GMF from the Sun to the Galactic halo. 
+- Combine the 3D density mapping of the ISM derived from stellar surveys including Gaia astrometry, with polarization data and theoretical models to build a 3D model of the ordered GMF from the Sun to the Galactic halo. 
 
-- (ii) The richness of Planck and LOFAR observations calls for a breakthrough in our ability to analyze data and numerical simulations, for comparison. We need to capture the hierarchy of coherent, anisotropic structures characterizing the structure of the magnetized ISM and their interplay with the gas and dust 
+- The richness of Planck and LOFAR observations calls for a breakthrough in our ability to analyze data and numerical simulations, for comparison. We need to capture the hierarchy of coherent, anisotropic structures characterizing the structure of the magnetized ISM and their interplay with the gas and dust 
 microphysics, primarily in our project the polarization properties of dust grains. This information is encoded in the data, but most of it is lost when one resorts 
 to the classical tools (i.e. one- and two-point statistics), which have so far been used.
 
-- (iii) Uncertainties arising from Galactic foreground residuals and their potential interplay with instrumental systematics will become the dominant term in the error budget of future CMB polarization experiments.  All component separation methods rely on simulated data to quantify uncertainties and potential biases. To reach the detection limit of primordial B-modes targeted by upcoming ground-based CMB experiments, the separation between Galactic and CMB polarization has to be performed with an outstanding accuracy facing the complexity of Galactic foreground. 
+- Uncertainties arising from Galactic foreground residuals and their potential interplay with instrumental systematics will become the dominant term in the error budget of future CMB polarization experiments.  All component separation methods rely on simulated data to quantify uncertainties and potential biases. To reach the detection limit of primordial B-modes targeted by upcoming ground-based CMB experiments, the separation between Galactic and CMB polarization has to be performed with an outstanding accuracy facing the complexity of Galactic foreground. 
