@@ -88,6 +88,10 @@ Voici un texte en *italique*
 ```
 Voici un texte en *italique*
 #### Gras
+```
+Ce texte est en **gras**.
+```
+Ce texte est en **gras**.
 #### Encadrement
 ```
 Cette encadrement reste dans la ligne : `texte`.
@@ -101,8 +105,22 @@ Pour encadrer un mot special, utilisé la plupart du temps pour encadrer un peti
 |-------|-------|-------|
 | Row 1 | Row 1 | Row 1 |
 | Row 2 | Row 2 | Row 2 |
+
+Voici le tableau minimal :
+|||
+|--|--|
+
 ```
 
+| Col 1 | Col 2 | Col 3 |
+|-------|-------|-------|
+| Row 1 | Row 1 | Row 1 |
+| Row 2 | Row 2 | Row 2 |
+
+Trois tirets sont necessaires la seconde ligne pour faire un tableau minimal :
+
+|||
+|---|---|
 
 ### Blocs
 ```
